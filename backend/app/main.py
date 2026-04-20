@@ -11,10 +11,11 @@ app = FastAPI(title=settings.API_TITLE, version=settings.API_VERSION)
 # Log startup
 log_info(f"Starting {settings.API_TITLE} v{settings.API_VERSION}")
 
-# CORS middleware for frontend requests
+frontend_url = os.getenv("FRONTEND_URL", "http://localhost:5173")
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[settings.FRONTEND_URL, "http://localhost:5173"],
+    allow_origins=[frontend_url, "http://localhost:5173", "http://localhost:3000"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

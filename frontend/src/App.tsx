@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Layout } from "./components/layout/Layout";
 import { GrowthCalculator } from "./components/calculators/GrowthCalculator";
 import { WithdrawalCalculator } from "./components/calculators/WithdrawalCalculator";

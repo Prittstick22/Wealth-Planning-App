@@ -14,7 +14,7 @@ log_info(f"Starting {settings.API_TITLE} v{settings.API_VERSION}")
 # CORS middleware for frontend requests
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://localhost:3000"],
+    allow_origins=[settings.FRONTEND_URL, "http://localhost:5173"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
